@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz/pages/homescreen.dart';
+import 'package:quiz/pages/home/homescreen.dart';
 
 import 'login.dart';
 

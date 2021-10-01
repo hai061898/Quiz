@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_overboard/flutter_overboard.dart';
-import 'package:quiz/pages/homescreen.dart';
+import 'package:quiz/pages/home/homescreen.dart';
 
 
 

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz/pages/homescreen.dart';
+import 'package:quiz/pages/home/homescreen.dart';
 import 'package:quiz/pages/onboarding.dart';
 
 void main() {
