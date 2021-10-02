@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz/controllers/quizcontroller.dart';
+import 'package:quiz/models/category.dart';
+
+import 'quiz_screen.dart';
 
 class QuizCategoryCard extends StatelessWidget {
   final String image;
-  const QuizCategoryCard({
+  final QuizCategory category;
+  const QuizCategoryCard(this.category, {
     Key? key,
     required this.image,
   }) : super(key: key);
@@ -11,11 +17,12 @@ class QuizCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Get.find<QuizController>().loadQuestions(category);
         Navigator.of(context).push(
           PageRouteBuilder(
             pageBuilder: (_, anim, anim2) => FadeTransition(
               opacity: anim,
-              // child: QuizPage(),
+              child:const QuizPage(),
             ),
           ),
         );
@@ -53,9 +60,9 @@ class QuizCategoryCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                     const Text(
-                        "Quiz category",
-                        style: TextStyle(
+                      Text(
+                        category.name!,
+                        style:const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           fontSize: 24.0,
@@ -69,9 +76,9 @@ class QuizCategoryCard extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8.0, vertical: 4.0),
-                        child:const Text(
-                          "Easy",
-                          style: TextStyle(
+                        child: Text(
+                          category.difficulity!,
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 12.0,
